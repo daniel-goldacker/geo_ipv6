@@ -16,7 +16,7 @@ def _validate_ipv6(ip: str) -> None:
     try:
         parsed = ipaddress.ip_address(ip)
     except ValueError as exc:
-        raise InvalidIPv6Error("IPv6 invalido.") from exc
+        raise InvalidIPv6Error("IPv6 inválido.") from exc
     if parsed.version != 6:
         raise InvalidIPv6Error("O endpoint aceita apenas IPv6.")
 
@@ -52,8 +52,8 @@ def lookup_geo_ipv6(ip: str, session: requests.Session | None = None) -> Tuple[s
             http.close()
 
     raise GeoLookupError(
-        "Nao foi possivel consultar geolocalizacao. "
-        "Verifique DNS/internet ou troque o servidor DNS da maquina."
+        "Não foi possível consultar geolocalização. "
+        "Verifique DNS/internet ou troque o servidor DNS da máquina."
     ) from last_error
 
 

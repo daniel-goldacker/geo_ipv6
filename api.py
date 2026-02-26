@@ -7,7 +7,7 @@ from geo_ipv6 import GeoLookupError, InvalidIPv6Error, lookup_geo_ipv6
 
 app = FastAPI(
     title="Geo IPv6 API",
-    description="API para consulta de geolocalizacao a partir de enderecos IPv6.",
+    description="API para consulta de geolocalização a partir de endereços IPv6.",
     version="1.0.0",
 )
 
@@ -47,10 +47,10 @@ def health() -> Dict[str, str]:
     response_model=GeoIpv6Response,
     responses={400: {"model": ErrorResponse}, 502: {"model": ErrorResponse}},
     tags=["geo"],
-    summary="Consulta geolocalizacao por IPv6 (query param)",
+    summary="Consulta geolocalização por IPv6 (query param)",
 )
 def get_geo_ipv6_query(
-    ip: str = Query(..., description="Endereco IPv6 para consulta"),
+    ip: str = Query(..., description="Endereço IPv6 para consulta"),
 ) -> GeoIpv6Response:
     return _lookup_or_raise(ip)
 
@@ -60,7 +60,7 @@ def get_geo_ipv6_query(
     response_model=GeoIpv6Response,
     responses={400: {"model": ErrorResponse}, 502: {"model": ErrorResponse}},
     tags=["geo"],
-    summary="Consulta geolocalizacao por IPv6 (rota legada)",
+    summary="Consulta geolocalização por IPv6 (rota legada)",
 )
 def get_geo_ipv6(ip: str) -> GeoIpv6Response:
     return _lookup_or_raise(ip)
