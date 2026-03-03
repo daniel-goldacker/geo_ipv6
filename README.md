@@ -1,4 +1,4 @@
-# Geo IPv6 API
+﻿# Geo IPv6 API
 API em Python para consultar geolocalização de um endereço IPv6 com fallback entre provedores externos.
 
 ## Stack
@@ -66,6 +66,14 @@ Exemplo de resposta:
     "ip": "2001:4860:4860::8888"
   }
 }
+```
+
+### `GET /map?ip={ipv6}`
+Retorna mapa interativo (HTML) do IP com Leaflet + OpenStreetMap.
+
+Exemplo:
+```bash
+http://localhost:8000/map?ip=2001:4860:4860::8888
 ```
 
 ## Códigos de erro
